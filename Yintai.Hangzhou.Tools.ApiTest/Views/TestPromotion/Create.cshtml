@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*new { enctype = "multipart/form-data" }比不可少，否则上传文件不会成功 *@
+<form action="http://localhost:8616/api/promotion/create" enctype="multipart/form-data" method="post">
+    <table>
+        <tr>
+            <td>
+                <text>选择上传文件：</text>
+                <input name="file1" type="file" id="file1" /></td>
+        </tr>
+        <tr>
+            <td>
+                <text>选择上传文件：</text>
+                <input name="file2" type="file" id="file2" /></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Name">Name</label>
+                <input type="text" name="Name" value="测试tag" /></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Description">Description</label>
+                <input type="text" name="Description" value="测试tag" /></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="StartDate">StartDate</label>
+                <input type="text" name="StartDate" value="2013-01-06 02:16:19 +0000" /></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="EndDate">EndDate</label>
+                <input type="text" name="EndDate" value="2013-01-09 02:16:19 +0000" /></td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <input type="hidden" name="uid" value="1d28c9ef01a5ec985741a4d53ecabfbd" />
+
+                <input type="hidden" name="sign" value="16323A8EB8171CA007EF44A072389DC9" />
+                <input type="hidden" name="client_version" value="1.0" />
+                <input type="hidden" name="token" value="vJQICst1Gg9E3s9XarQqFxvl+ByXJLOa/819nUXGE7M/f3PPHCUpwHn/pE0y4jW2" />
+                <input type="hidden" name="brandid" value="10000" />
+                <input type="hidden" name="storeid" value="1"/>
+                <input type="hidden" name="tagid" value="1"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="Upload" value="Upload" /></td>
+        </tr>
+    </table>
+</form>

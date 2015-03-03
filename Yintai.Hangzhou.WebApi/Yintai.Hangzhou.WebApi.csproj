@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A1B5C84-F8E4-46D6-9D25-81CFE1AF27C1}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yintai.Hangzhou.WebApi</RootNamespace>
+    <AssemblyName>Yintai.Hangzhou.WebApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EmitMapper">
+      <HintPath>..\_dll\EmitMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\_dll\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configurations\test\appSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fileupload\img\loading.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="Icons\coupon\icon.png" />
+    <Content Include="Icons\coupon\logo.png" />
+    <Content Include="Icons\NewFolder1\icon.png" />
+    <Content Include="Icons\NewFolder1\logo.png" />
+    <Content Include="Icons\NewFolder1\strip.png" />
+    <Content Include="Icons\coupon\icon2.png" />
+    <Content Include="Icons\NewFolder1\strip%402x.png" />
+    <Content Include="Icons\Event\background%402x.png" />
+    <Content Include="Icons\Event\background.png" />
+    <Content Include="Icons\Event\icon%402x.png" />
+    <Content Include="Icons\Event\icon.png" />
+    <Content Include="Icons\Event\logo%402x.png" />
+    <Content Include="Icons\Event\logo.png" />
+    <Content Include="Icons\Event\thumbnail%402x.png" />
+    <Content Include="Icons\Event\thumbnail.png" />
+    <Content Include="Icons\icon%402x.png" />
+    <Content Include="Icons\icon.png" />
+    <Content Include="Icons\logo%402x.png" />
+    <Content Include="Icons\logo.png" />
+    <Content Include="Icons\Starbucks\background%402x.png" />
+    <Content Include="Icons\Starbucks\background.png" />
+    <Content Include="Icons\Starbucks\icon%402x.png" />
+    <Content Include="Icons\Starbucks\icon.png" />
+    <Content Include="Icons\Starbucks\logo%402x.png" />
+    <Content Include="Icons\Starbucks\logo.png" />
+    <Content Include="robots.txt" />
+    <Content Include="status.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configurations\test\Log4Net.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configurations\test\unity.config" />
+    <Content Include="Configurations\production\appSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configurations\Log4Net.config" />
+    <Content Include="Configurations\production\unity.config" />
+    <Content Include="Configurations\production\Log4Net.config" />
+    <Content Include="Configurations\production\elasticSearch.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configurations\production\rabbit.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configurations\production\alipay_ims.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configurations\production\cache_authkeys.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configurations\production\env.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configurations\test\env.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configurations\test\cache_authkeys.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\HangzhouV45.pubxml" />
+    <None Include="Properties\PublishProfiles\intimedemo - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\intimedemo - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\PublishProfiles\victor.pubxml" />
+    <None Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="fileupload\def\" />
+    <Folder Include="fileupload\sound\" />
+    <Folder Include="fileupload\video\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.intime.fashion.common.message.rabbit\com.intime.fashion.common.message.rabbit.csproj">
+      <Project>{c5b14b68-f27c-4317-9327-5fcf66aefa52}</Project>
+      <Name>com.intime.fashion.common.message.rabbit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Contract\Yintai.Hangzhou.Contract.csproj">
+      <Project>{11f8922e-2eeb-4229-ba7c-1d44843c4eda}</Project>
+      <Name>Yintai.Hangzhou.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Data\Yintai.Hangzhou.Data.csproj">
+      <Project>{b07cec69-b35a-4435-9e83-d7ad4e1f236e}</Project>
+      <Name>Yintai.Hangzhou.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Model\Yintai.Hangzhou.Model.csproj">
+      <Project>{173ff5c0-5631-47ad-af9e-16442858c080}</Project>
+      <Name>Yintai.Hangzhou.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Repository\Yintai.Hangzhou.Repository.csproj">
+      <Project>{82be109a-483e-40bf-98b8-a555bca86111}</Project>
+      <Name>Yintai.Hangzhou.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Service\Yintai.Hangzhou.Service.csproj">
+      <Project>{193902dc-242c-4dba-b173-ee154e813c4b}</Project>
+      <Name>Yintai.Hangzhou.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.WebApiCore\Yintai.Hangzhou.WebApiCore.csproj">
+      <Project>{9ebd5d9a-f4dc-4a75-8348-bce676c5c795}</Project>
+      <Name>Yintai.Hangzhou.WebApiCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.WebAppSupport\Yintai.Hangzhou.WebSupport.csproj">
+      <Project>{a2e82216-56cc-45bf-b671-db8cc464d573}</Project>
+      <Name>Yintai.Hangzhou.WebSupport</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Errors.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65324</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8080</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

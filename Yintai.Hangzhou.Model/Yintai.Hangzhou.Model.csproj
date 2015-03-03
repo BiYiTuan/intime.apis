@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{173FF5C0-5631-47AD-AF9E-16442858C080}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yintai.Hangzhou.Model</RootNamespace>
+    <AssemblyName>Yintai.Hangzhou.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Yintai.Architecture.Common">
+      <HintPath>..\_dll\Yintai.Architecture.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Yintai.Architecture.Framework">
+      <HintPath>..\_dll\Yintai.Architecture.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AliPayKey.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="BusinessResult.cs" />
+    <Compile Include="EnumExtension.cs" />
+    <Compile Include="Enums\AccountType.cs" />
+    <Compile Include="Enums\AssociateFavorType.cs" />
+    <Compile Include="Enums\AssociateIncomeRequestStatus.cs" />
+    <Compile Include="Enums\AssociateIncomeStatus.cs" />
+    <Compile Include="Enums\AssociateIncomeTransferStatus.cs" />
+    <Compile Include="Enums\AuthDataType.cs" />
+    <Compile Include="Enums\BrandSortOrder.cs" />
+    <Compile Include="Enums\BusinessStatus.cs" />
+    <Compile Include="Enums\CardType.cs" />
+    <Compile Include="Enums\CategorySizeType.cs" />
+    <Compile Include="Enums\ComboType.cs" />
+    <Compile Include="Enums\IncomeRuleType.cs" />
+    <Compile Include="Enums\InviteCodeRequestStatus.cs" />
+    <Compile Include="Enums\InviteCodeRequestType.cs" />
+    <Compile Include="Enums\OrderPreCalculateType.cs" />
+    <Compile Include="Enums\OrderProductType.cs" />
+    <Compile Include="Enums\CouponActionType.cs" />
+    <Compile Include="Enums\CouponStatus.cs" />
+    <Compile Include="Enums\HotWordType.cs" />
+    <Compile Include="Enums\CouponBusinessStatus.cs" />
+    <Compile Include="Enums\CustomerSortOrder.cs" />
+    <Compile Include="Enums\FeedbackSortOrder.cs" />
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\InboundType.cs" />
+    <Compile Include="Enums\LikeType.cs" />
+    <Compile Include="Enums\MathMethod.cs" />
+    <Compile Include="Enums\NotificationStatus.cs" />
+    <Compile Include="Enums\OrderOpera.cs" />
+    <Compile Include="Enums\OrderStatus.cs" />
+    <Compile Include="Enums\AsssociateOrderType.cs" />
+    <Compile Include="Enums\OutboundStatus.cs" />
+    <Compile Include="Enums\OutboundType.cs" />
+    <Compile Include="Enums\PaidOrderType.cs" />
+    <Compile Include="Enums\PreConfiguration.cs" />
+    <Compile Include="Enums\ProductType.cs" />
+    <Compile Include="Enums\PromotionCountType.cs" />
+    <Compile Include="Enums\PushSourceType.cs" />
+    <Compile Include="Enums\ResourceSortOrder.cs" />
+    <Compile Include="Enums\RMAStatus.cs" />
+    <Compile Include="Enums\RMAType.cs" />
+    <Compile Include="Enums\ShipType.cs" />
+    <Compile Include="Enums\SpecialTopicOrder.cs" />
+    <Compile Include="Enums\SpecialTopicType.cs" />
+    <Compile Include="Enums\StorePromotionType.cs" />
+    <Compile Include="Enums\StoreSortOrder.cs" />
+    <Compile Include="Enums\TagSortOrder.cs" />
+    <Compile Include="Enums\UserOperatorRight.cs" />
+    <Compile Include="Enums\UserRole.cs" />
+    <Compile Include="ErrorResult.cs" />
+    <Compile Include="ESModel\ESGroup.cs" />
+    <Compile Include="ESModel\ESAnalysisEvent.cs" />
+    <Compile Include="ESModel\ESAnalysisSummary.cs" />
+    <Compile Include="ESModel\ESBanner.cs" />
+    <Compile Include="ESModel\ESBrand.cs" />
+    <Compile Include="ESModel\ESCombo.cs" />
+    <Compile Include="ESModel\ESComment.cs" />
+    <Compile Include="ESModel\ESDepartment.cs" />
+    <Compile Include="ESModel\ESEventType.cs" />
+    <Compile Include="ESModel\ESHotword.cs" />
+    <Compile Include="ESModel\ESIMSTag.cs" />
+    <Compile Include="ESModel\ESProduct.cs" />
+    <Compile Include="ESModel\ESStockPropertyValue.cs" />
+    <Compile Include="ESModel\ESProductPropertyValue.cs" />
+    <Compile Include="ESModel\ESPromotion.cs" />
+    <Compile Include="ESModel\ESResource.cs" />
+    <Compile Include="ESModel\ESSection.cs" />
+    <Compile Include="ESModel\ESSize.cs" />
+    <Compile Include="ESModel\ESSpecialTopic.cs" />
+    <Compile Include="ESModel\ESStock.cs" />
+    <Compile Include="ESModel\ESStore.cs" />
+    <Compile Include="ESModel\ESStorePromotion.cs" />
+    <Compile Include="ESModel\ESTag.cs" />
+    <Compile Include="ESModel\ESUser.cs" />
+    <Compile Include="Filters\BannerSearchOption.cs" />
+    <Compile Include="Filters\CardSearchOption.cs" />
+    <Compile Include="Filters\HotwordSearchOption.cs" />
+    <Compile Include="Filters\OrderSearchOption.cs" />
+    <Compile Include="Filters\PromotionFilter.cs" />
+    <Compile Include="Filters\CommentSearchOption.cs" />
+    <Compile Include="Filters\GenericOrder.cs" />
+    <Compile Include="Filters\ProductFilter.cs" />
+    <Compile Include="Filters\ProductSearchOption.cs" />
+    <Compile Include="Filters\StorePromotionSearchOption.cs" />
+    <Compile Include="Filters\UserAuthSearchOption.cs" />
+    <Compile Include="Order\OrderCreate.cs" />
+    <Compile Include="Order\OrderCreateResult.cs" />
+    <Compile Include="Order\OrderItem.cs" />
+    <Compile Include="Order\OrderPreCalculate.cs" />
+    <Compile Include="Order\OrderPreCalculateResult.cs" />
+    <Compile Include="Order\PaymentMethod.cs" />
+    <Compile Include="Order\ShippingAddress.cs" />
+    <Compile Include="Product\ProductPropertyValue.cs" />
+    <Compile Include="UserAccountModel.cs" />
+    <Compile Include="WebSiteUser.cs" />
+    <Compile Include="Enums\CouponSortOrder.cs" />
+    <Compile Include="Enums\LikeSortOrder.cs" />
+    <Compile Include="Enums\PointSortOrder.cs" />
+    <Compile Include="Enums\PointSourceType.cs" />
+    <Compile Include="Enums\PointType.cs" />
+    <Compile Include="Enums\ProductSortOrder.cs" />
+    <Compile Include="Enums\CommentSortOrder.cs" />
+    <Compile Include="Enums\DataStatus.cs" />
+    <Compile Include="Enums\FavoriteSortOrder.cs" />
+    <Compile Include="Enums\RecommendSourceType.cs" />
+    <Compile Include="Enums\PromotionSortOrder.cs" />
+    <Compile Include="Enums\SourceType.cs" />
+    <Compile Include="Enums\UserLevel.cs" />
+    <Compile Include="Enums\OutsiteType.cs" />
+    <Compile Include="GroupModel.cs" />
+    <Compile Include="RegionModel.cs" />
+    <Compile Include="StoreModel.cs" />
+    <Compile Include="UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeixinPayKey.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

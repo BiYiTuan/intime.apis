@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2E82216-56CC-45BF-B671-DB8CC464D573}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yintai.Hangzhou.WebSupport</RootNamespace>
+    <AssemblyName>Yintai.Hangzhou.WebSupport</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EFCachingProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=def642f226e0e59b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\EFCachingProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="EFCachingProvider.Web">
+      <HintPath>..\_dll\EFCachingProvider.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="EFProviderWrapperToolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=def642f226e0e59b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\EFProviderWrapperToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EFTracingProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=def642f226e0e59b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\EFTracingProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Yintai.Hangzhou.WebApi\Bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Yintai.Architecture.Common">
+      <HintPath>..\_dll\Yintai.Architecture.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Yintai.Architecture.Framework">
+      <HintPath>..\_dll\Yintai.Architecture.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Binder\BrandModelBinder.cs" />
+    <Compile Include="Binder\ModelWithInternalJsonArrayBinder.cs" />
+    <Compile Include="Binder\SpecialTopicModelBinder.cs" />
+    <Compile Include="Binder\FeedbackModelBinder.cs" />
+    <Compile Include="Binder\CommentModelBinder.cs" />
+    <Compile Include="Binder\PagerRequestBinder.cs" />
+    <Compile Include="Binder\PointModelBinder.cs" />
+    <Compile Include="Binder\ProductModelBinder.cs" />
+    <Compile Include="Binder\PromotionModelBinder.cs" />
+    <Compile Include="Binder\ResourceModelBinder.cs" />
+    <Compile Include="Binder\RestfulAuthUserModelBinder.cs" />
+    <Compile Include="Binder\StoreModelBinder.cs" />
+    <Compile Include="Binder\TagModlBinder.cs" />
+    <Compile Include="Binder\UserModelBinder.cs" />
+    <Compile Include="Binder\XmlModelBinder.cs" />
+    <Compile Include="Configuration\ConfigManager.cs" />
+    <Compile Include="Filters\VersionFilter.cs" />
+    <Compile Include="Helper\EnumExtension.cs" />
+    <Compile Include="Ioc\BaseIocRegister.cs" />
+    <Compile Include="Ioc\ConfigIocRegister.cs" />
+    <Compile Include="Ioc\IIocRegister.cs" />
+    <Compile Include="Ioc\ImportantSupportIocRegister.cs" />
+    <Compile Include="Ioc\IocRegisterRun.cs" />
+    <Compile Include="Ioc\PreApplicationStartCode.cs" />
+    <Compile Include="Ioc\RepositoryIocRegister.cs" />
+    <Compile Include="Ioc\RequestLifetimeHttpModule.cs" />
+    <Compile Include="Ioc\ServiceIocRegister.cs" />
+    <Compile Include="Ioc\UnfinishedIocRegister.cs" />
+    <Compile Include="Ioc\PerRequestUnityServiceLocator.cs" />
+    <Compile Include="Mvc\MvcApplication.cs" />
+    <Compile Include="Mvc\RestfulAuthorizeAttribute.cs" />
+    <Compile Include="Mvc\RestfulRoleAuthorizeAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.intime.fashion.common.config\com.intime.fashion.common.config.csproj">
+      <Project>{5d633b61-5763-459b-a72e-ae66f5bc0793}</Project>
+      <Name>com.intime.fashion.common.config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.common.message.rabbit\com.intime.fashion.common.message.rabbit.csproj">
+      <Project>{c5b14b68-f27c-4317-9327-5fcf66aefa52}</Project>
+      <Name>com.intime.fashion.common.message.rabbit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.common.message\com.intime.fashion.common.message.csproj">
+      <Project>{a7154a06-be04-400f-8652-5b52e673b7db}</Project>
+      <Name>com.intime.fashion.common.message</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.common\com.intime.fashion.common.csproj">
+      <Project>{6992ffb6-c70d-4f8a-a03a-4f663fa370f4}</Project>
+      <Name>com.intime.fashion.common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.service.cache\com.intime.fashion.service.cache.csproj">
+      <Project>{9f3b1365-64f9-43d3-8aa8-eab91e1b7c9e}</Project>
+      <Name>com.intime.fashion.service.cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.service.contract\com.intime.fashion.service.contract.csproj">
+      <Project>{e69391ab-6e94-4937-9c34-3a5485f71592}</Project>
+      <Name>com.intime.fashion.service.contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.service\com.intime.fashion.service.csproj">
+      <Project>{be4f98bc-b4a2-4fc0-ae7a-96938218f098}</Project>
+      <Name>com.intime.fashion.service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.o2o.data.exchange\com.intime.o2o.data.exchange.csproj">
+      <Project>{6dfef1cf-0b94-420e-82a7-c6cabba3624a}</Project>
+      <Name>com.intime.o2o.data.exchange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Contract\Yintai.Hangzhou.Contract.csproj">
+      <Project>{11f8922e-2eeb-4229-ba7c-1d44843c4eda}</Project>
+      <Name>Yintai.Hangzhou.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Data\Yintai.Hangzhou.Data.csproj">
+      <Project>{b07cec69-b35a-4435-9e83-d7ad4e1f236e}</Project>
+      <Name>Yintai.Hangzhou.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Model\Yintai.Hangzhou.Model.csproj">
+      <Project>{173ff5c0-5631-47ad-af9e-16442858c080}</Project>
+      <Name>Yintai.Hangzhou.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Repository\Yintai.Hangzhou.Repository.csproj">
+      <Project>{82be109a-483e-40bf-98b8-a555bca86111}</Project>
+      <Name>Yintai.Hangzhou.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Service\Yintai.Hangzhou.Service.csproj">
+      <Project>{193902dc-242c-4dba-b173-ee154e813c4b}</Project>
+      <Name>Yintai.Hangzhou.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

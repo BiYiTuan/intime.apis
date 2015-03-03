@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{097E9EAF-EC77-4FB2-86FB-7B30ACD7DF93}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.intime.fashion.service.messages</RootNamespace>
+    <AssemblyName>com.intime.fashion.service.messages</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TopSdk">
+      <HintPath>..\_dll\TopSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Yintai.Architecture.Common">
+      <HintPath>..\_dll\Yintai.Architecture.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Yintai.Architecture.Framework">
+      <HintPath>..\_dll\Yintai.Architecture.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MessageHandler.cs" />
+    <Compile Include="Message\ComboHandler.cs" />
+    <Compile Include="Message\ComboUpdatedHandler.cs" />
+    <Compile Include="Message\DaogouApplyApprovedHandler.cs" />
+    <Compile Include="Message\GiftcardPaidHandler.cs" />
+    <Compile Include="Message\InventoryUpdatedHandler.cs" />
+    <Compile Include="Message\InventoryHandler.cs" />
+    <Compile Include="Message\OrderPaidHandler.cs" />
+    <Compile Include="Message\ProductHandler.cs" />
+    <Compile Include="Message\SectionBrandHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.intime.fashion.common.config\com.intime.fashion.common.config.csproj">
+      <Project>{5d633b61-5763-459b-a72e-ae66f5bc0793}</Project>
+      <Name>com.intime.fashion.common.config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.common.message\com.intime.fashion.common.message.csproj">
+      <Project>{a7154a06-be04-400f-8652-5b52e673b7db}</Project>
+      <Name>com.intime.fashion.common.message</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.common\com.intime.fashion.common.csproj">
+      <Project>{6992ffb6-c70d-4f8a-a03a-4f663fa370f4}</Project>
+      <Name>com.intime.fashion.common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.service.contract\com.intime.fashion.service.contract.csproj">
+      <Project>{e69391ab-6e94-4937-9c34-3a5485f71592}</Project>
+      <Name>com.intime.fashion.service.contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.service.search\com.intime.fashion.service.search.csproj">
+      <Project>{be512bbf-4f5a-4909-b9c0-cf3419e0f945}</Project>
+      <Name>com.intime.fashion.service.search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.service\com.intime.fashion.service.csproj">
+      <Project>{be4f98bc-b4a2-4fc0-ae7a-96938218f098}</Project>
+      <Name>com.intime.fashion.service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.o2o.data.exchange\com.intime.o2o.data.exchange.csproj">
+      <Project>{6DFEF1CF-0B94-420E-82A7-C6CABBA3624A}</Project>
+      <Name>com.intime.o2o.data.exchange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Data\Yintai.Hangzhou.Data.csproj">
+      <Project>{b07cec69-b35a-4435-9e83-d7ad4e1f236e}</Project>
+      <Name>Yintai.Hangzhou.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Model\Yintai.Hangzhou.Model.csproj">
+      <Project>{173ff5c0-5631-47ad-af9e-16442858c080}</Project>
+      <Name>Yintai.Hangzhou.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Service\Yintai.Hangzhou.Service.csproj">
+      <Project>{193902dc-242c-4dba-b173-ee154e813c4b}</Project>
+      <Name>Yintai.Hangzhou.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

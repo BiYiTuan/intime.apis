@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*new { enctype = "multipart/form-data" }比不可少，否则上传文件不会成功 *@
+<form enctype="multipart/form-data" method="post">
+    <table>
+        <tr>
+            <td>
+                <text>选择上传文件：</text>
+                <input name="file1" type="file" id="file1" /></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Content">Content</label>
+                <input type="text" name="Content" /></td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="userid">userid</label>
+                <input type="text" name="userid" /></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="SourceId">SourceId</label>
+                <input type="text" name="SourceId"  value="1"/></td>
+        </tr>
+        
+                <tr>
+            <td>
+                <label for="SourceType">SourceType</label>
+                <input type="text" name="SourceType" value="1" /></td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="hidden" name="uid" value="68e01158cddd2bd2aff7d6b8cf3b6c7e" />
+
+                <input type="hidden" name="sign" value="17AA954847F11CB85032712BDE5FBD24" />
+                <input type="hidden" name="client_version" value="1.0.0" />
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="Upload" value="Upload" /></td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82BE109A-483E-40BF-98B8-A555BCA86111}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yintai.Hangzhou.Repository</RootNamespace>
+    <AssemblyName>Yintai.Hangzhou.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\_dll\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Yintai.Architecture.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Yintai.Architecture.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Yintai.Architecture.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Yintai.Architecture.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuratons\ConfigManager.cs" />
+    <Compile Include="Contract\IAdminAccessRightRepository.cs" />
+    <Compile Include="Contract\IBannerRepository.cs" />
+    <Compile Include="Contract\IBrandRepository.cs" />
+    <Compile Include="Contract\ICardRepository.cs" />
+    <Compile Include="Contract\ICategoryMapRepository.cs" />
+    <Compile Include="Contract\ICategoryRepository.cs" />
+    <Compile Include="Contract\ICategoryPropertyRepository.cs" />
+    <Compile Include="Contract\ICategoryPropertyValueRepository.cs" />
+    <Compile Include="Contract\ICommentRepository.cs" />
+    <Compile Include="Contract\ICouponLogRepository.cs" />
+    <Compile Include="Contract\ICouponRepository.cs" />
+    <Compile Include="Contract\IDeviceLogsRepository.cs" />
+    <Compile Include="Contract\IDeviceTokenRepository.cs" />
+    <Compile Include="Contract\IFavoriteRepository.cs" />
+    <Compile Include="Contract\IFeedbackRepository.cs" />
+    <Compile Include="Contract\IHotWordRepository.cs" />
+    <Compile Include="Contract\IInboundPackRepository.cs" />
+    <Compile Include="Contract\IInventoryRepository.cs" />
+    <Compile Include="Contract\ILikeRepository.cs" />
+    <Compile Include="Contract\IOrder2ExRepository.cs" />
+    <Compile Include="Contract\IOrderItemRepository.cs" />
+    <Compile Include="Contract\IOrderLogRepository.cs" />
+    <Compile Include="Contract\IOrderRepository.cs" />
+    <Compile Include="Contract\IOutboundItemRepository.cs" />
+    <Compile Include="Contract\IOutboundRepository.cs" />
+    <Compile Include="Contract\IOutSiteCustomerRepository.cs" />
+    <Compile Include="Contract\IPMessageRepository.cs" />
+    <Compile Include="Contract\IPointOrderRuleRepository.cs" />
+    <Compile Include="Contract\IPointRepository.cs" />
+    <Compile Include="Contract\IProductBulkRepository.cs" />
+    <Compile Include="Contract\IProductCode2StoreCodeRepository.cs" />
+    <Compile Include="Contract\IProductPropertyRepository.cs" />
+    <Compile Include="Contract\IProductPropertyValueRepository.cs" />
+    <Compile Include="Contract\IProductRepository.cs" />
+    <Compile Include="Contract\IPromotionProductRelationRepository.cs" />
+    <Compile Include="Contract\IPromotionRelations.cs" />
+    <Compile Include="Contract\IPromotionRepository.cs" />
+    <Compile Include="Contract\IQueryableExtension.cs" />
+    <Compile Include="Contract\IRemindRepository.cs" />
+    <Compile Include="Contract\IRepository.cs" />
+    <Compile Include="Contract\ICustomerRepository.cs" />
+    <Compile Include="Contract\IResourceRepository.cs" />
+    <Compile Include="Contract\IRMA2ExRepository.cs" />
+    <Compile Include="Contract\IRMAItemRepository.cs" />
+    <Compile Include="Contract\IRMALogRepository.cs" />
+    <Compile Include="Contract\IRMARepository.cs" />
+    <Compile Include="Contract\IRoleRepository.cs" />
+    <Compile Include="Contract\ISectionRepository.cs" />
+    <Compile Include="Contract\ISeedRepository.cs" />
+    <Compile Include="Contract\IShareRepository.cs" />
+    <Compile Include="Contract\IShippingAddressRepository.cs" />
+    <Compile Include="Contract\IShippViaRepository.cs" />
+    <Compile Include="Contract\ISpecialTopicRepository.cs" />
+    <Compile Include="Contract\IStoreCouponsRepository.cs" />
+    <Compile Include="Contract\IStorePromotionRepository.cs" />
+    <Compile Include="Contract\IStorePromotionScopeRepository.cs" />
+    <Compile Include="Contract\IStoreRealRepository.cs" />
+    <Compile Include="Contract\IStoreRepository.cs" />
+    <Compile Include="Contract\ITagRepository.cs" />
+    <Compile Include="Contract\ITimeSeedRepository.cs" />
+    <Compile Include="Contract\IUserAccountRepository.cs" />
+    <Compile Include="Contract\IUserAuthRepository.cs" />
+    <Compile Include="Contract\IUserRoleRepository.cs" />
+    <Compile Include="Contract\IVerifyCodeRepository.cs" />
+    <Compile Include="Contract\IVUserRepository.cs" />
+    <Compile Include="Contract\IVUserRoleRepository.cs" />
+    <Compile Include="Contract\IWXReplyRepository.cs" />
+    <Compile Include="Impl\AdminAccessRightRepository.cs" />
+    <Compile Include="Impl\BannerRepository.cs" />
+    <Compile Include="Impl\BrandRepository.cs" />
+    <Compile Include="Impl\CardRepository.cs" />
+    <Compile Include="Impl\CategoryMapRepository.cs" />
+    <Compile Include="Impl\CategoryRepository.cs" />
+    <Compile Include="Impl\CategoryPropertyRepository.cs" />
+    <Compile Include="Impl\CategoryPropertyValueRepository.cs" />
+    <Compile Include="Impl\ComboRepository.cs" />
+    <Compile Include="Impl\CouponLogRepository.cs" />
+    <Compile Include="Impl\EFRepositoryExt.cs" />
+    <Compile Include="Impl\HotWordRepository.cs" />
+    <Compile Include="Impl\InboundPackageRepository.cs" />
+    <Compile Include="Impl\InventoryRepository.cs" />
+    <Compile Include="Impl\Order2ExRepository.cs" />
+    <Compile Include="Impl\OrderItemRepository.cs" />
+    <Compile Include="Impl\OrderLogRepository.cs" />
+    <Compile Include="Impl\OrderRepository.cs" />
+    <Compile Include="Impl\OrderTransactionRepository.cs" />
+    <Compile Include="Impl\OutboundItemRepository.cs" />
+    <Compile Include="Impl\OutboundRepository.cs" />
+    <Compile Include="Impl\PMessageRepository.cs" />
+    <Compile Include="Impl\PointOrderRuleRepository.cs" />
+    <Compile Include="Impl\ProductBulkRepository.cs" />
+    <Compile Include="Impl\ProductCode2StoreCodeRepository.cs" />
+    <Compile Include="Impl\ProductPropertyRepository.cs" />
+    <Compile Include="Impl\ProductPropertyValueRepository.cs" />
+    <Compile Include="Impl\PromotionProductRelation.cs" />
+    <Compile Include="Impl\RMA2ExRepository.cs" />
+    <Compile Include="Impl\RMAItemRepository.cs" />
+    <Compile Include="Impl\RMALogRepository.cs" />
+    <Compile Include="Impl\RMARepository.cs" />
+    <Compile Include="Impl\SectionRepository.cs" />
+    <Compile Include="Impl\SeedRepository.cs" />
+    <Compile Include="Impl\ShippingAddressRepository.cs" />
+    <Compile Include="Impl\ShipViaRepository.cs" />
+    <Compile Include="Impl\SpecialTopicProductRelationRepository.cs" />
+    <Compile Include="Impl\CommentRepository.cs" />
+    <Compile Include="Impl\CouponRepository.cs" />
+    <Compile Include="Impl\DeviceLogsRepository.cs" />
+    <Compile Include="Impl\DeviceTokenRepository.cs" />
+    <Compile Include="Impl\FavoriteRepository.cs" />
+    <Compile Include="Impl\FeedbackRepository.cs" />
+    <Compile Include="Impl\LikeRepository.cs" />
+    <Compile Include="Impl\PointRepository.cs" />
+    <Compile Include="Impl\ProductRepository.cs" />
+    <Compile Include="Impl\PromotionBrandRelationRepository.cs" />
+    <Compile Include="Impl\RemindRepository.cs" />
+    <Compile Include="Impl\ResourceRepository.cs" />
+    <Compile Include="Impl\PromotionRepository.cs" />
+    <Compile Include="Impl\RoleRepository.cs" />
+    <Compile Include="Impl\ShareRepository.cs" />
+    <Compile Include="Impl\SpecialTopicRepository.cs" />
+    <Compile Include="Impl\StoreCouponsRepository.cs" />
+    <Compile Include="Impl\StorePromotionRepository.cs" />
+    <Compile Include="Impl\StorePromotionScopeRepository.cs" />
+    <Compile Include="Impl\StoreRealRepository.cs" />
+    <Compile Include="Impl\TagRepository.cs" />
+    <Compile Include="Impl\TimeSeedRepository.cs" />
+    <Compile Include="Impl\UserAuthRepository.cs" />
+    <Compile Include="Impl\UserRoleRepository.cs" />
+    <Compile Include="Impl\VerifyCodeRepository.cs" />
+    <Compile Include="Impl\CustomerRepository.cs" />
+    <Compile Include="Impl\OutsiteCustomerRepository.cs" />
+    <Compile Include="Impl\RepositoryBase.cs" />
+    <Compile Include="Impl\StoreRepository.cs" />
+    <Compile Include="Impl\UserAccountRepository.cs" />
+    <Compile Include="Impl\VUserRepository.cs" />
+    <Compile Include="Impl\VUserRoleRepository.cs" />
+    <Compile Include="Impl\WXReplyRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.intime.fashion.common.message\com.intime.fashion.common.message.csproj">
+      <Project>{a7154a06-be04-400f-8652-5b52e673b7db}</Project>
+      <Name>com.intime.fashion.common.message</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Data\Yintai.Hangzhou.Data.csproj">
+      <Project>{b07cec69-b35a-4435-9e83-d7ad4e1f236e}</Project>
+      <Name>Yintai.Hangzhou.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Model\Yintai.Hangzhou.Model.csproj">
+      <Project>{173FF5C0-5631-47AD-AF9E-16442858C080}</Project>
+      <Name>Yintai.Hangzhou.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

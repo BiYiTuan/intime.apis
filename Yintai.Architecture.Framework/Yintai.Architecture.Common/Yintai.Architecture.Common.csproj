@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59E0C0A8-622A-498A-AC66-1C9E0588C74C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yintai.Architecture.Common</RootNamespace>
+    <AssemblyName>Yintai.Architecture.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EFCachingProvider">
+      <HintPath>..\_dll\EFCachingProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="EFCachingProvider.Web">
+      <HintPath>..\_dll\EFCachingProvider.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="EFProviderWrapperToolkit">
+      <HintPath>..\_dll\EFProviderWrapperToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EFTracingProvider">
+      <HintPath>..\_dll\EFTracingProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\_dll\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.5.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuraton\ConfigManager.cs" />
+    <Compile Include="Caching\ICache.cs" />
+    <Compile Include="Logger\ILog.cs" />
+    <Compile Include="Data\EF\EFRepository.cs" />
+    <Compile Include="Data\EF\EFTracingUtil.cs" />
+    <Compile Include="Data\EF\IEFRepository.cs" />
+    <Compile Include="Data\EF\IUnitOfWork.cs" />
+    <Compile Include="Data\EF\PredicateBuilder.cs" />
+    <Compile Include="Define.cs" />
+    <Compile Include="DefineRestfulMethod.cs" />
+    <Compile Include="Caching\CachingFactory.cs" />
+    <Compile Include="Caching\CachingHelper.cs" />
+    <Compile Include="Helper\Util.cs" />
+    <Compile Include="Caching\AspNetCacheProvider.cs" />
+    <Compile Include="Caching\BaseCacheProvider.cs" />
+    <Compile Include="Caching\NoCacheProvider.cs" />
+    <Compile Include="Caching\CachingManager.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Helper\CoordinatePositioningHelper.cs" />
+    <Compile Include="Logger\ConsoleLog.cs" />
+    <Compile Include="Logger\Log4NetLog.cs" />
+    <Compile Include="Logger\LoggerManager.cs" />
+    <Compile Include="Models\ContentType.cs" />
+    <Compile Include="Models\DateTimeRangeInfo.cs" />
+    <Compile Include="Models\ResourceType.cs" />
+    <Compile Include="Models\Timestamp.cs" />
+    <Compile Include="Models\DegreeMinuteSecondInfo.cs" />
+    <Compile Include="Models\CoordinateInfo.cs" />
+    <Compile Include="Models\ExecuteResult.cs" />
+    <Compile Include="Models\DomainModel.cs" />
+    <Compile Include="Models\PagerInfo.cs" />
+    <Compile Include="Models\StatusCode.cs" />
+    <Compile Include="Models\ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegularDefine.cs" />
+    <Compile Include="Web\Mvc\ActionResults\RestfulResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\WebExtension.cs" />
+    <Compile Include="Web\Mvc\Attributes\ValidParmeterAttribute.cs" />
+    <Compile Include="Web\Mvc\Attributes\DefaultHandleErrorAttribute.cs" />
+    <Compile Include="Web\HttpModules\GlobalErrorHandlerModule.cs" />
+    <Compile Include="Web\HttpModules\RequestLogginHttpModule.cs" />
+    <Compile Include="Web\Mvc\Binders\ModelBinderBase.cs" />
+    <Compile Include="Web\Mvc\Binders\UseBinderAttribute.cs" />
+    <Compile Include="Web\Mvc\Controllers\BaseController.cs" />
+    <Compile Include="Web\Mvc\Controllers\CustomerBaseController.cs" />
+    <Compile Include="Web\Mvc\Ioc\IocDependencyResolver.cs" />
+    <Compile Include="Web\Mvc\Routes\LowerCaseUrlRoute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Factory\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Yintai.Architecture.Framework\Yintai.Architecture.Framework.csproj">
+      <Project>{11d4830c-fd83-48b8-96de-6f51c9c2576c}</Project>
+      <Name>Yintai.Architecture.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

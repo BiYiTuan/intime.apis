@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{193902DC-242C-4DBA-B173-EE154E813C4B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yintai.Hangzhou.Service</RootNamespace>
+    <AssemblyName>Yintai.Hangzhou.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Yintai.Architecture.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Yintai.Architecture.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Yintai.Architecture.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Yintai.Architecture.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApnsDataService.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="BrandDataService.cs" />
+    <Compile Include="CardDataService.cs" />
+    <Compile Include="CommentDataService.cs" />
+    <Compile Include="Contract\Apis\IGroupCardService.cs" />
+    <Compile Include="Contract\IApnsService.cs" />
+    <Compile Include="Contract\IAuthenticationService.cs" />
+    <Compile Include="Contract\ICouponService.cs" />
+    <Compile Include="Contract\IFavoriteService.cs" />
+    <Compile Include="Contract\ILikeService.cs" />
+    <Compile Include="Contract\IPointService.cs" />
+    <Compile Include="Contract\IPromotionProductRelation.cs" />
+    <Compile Include="Contract\IRemindService.cs" />
+    <Compile Include="Contract\IShareService.cs" />
+    <Compile Include="Contract\IUserRightService.cs" />
+    <Compile Include="FeedbackDataService.cs" />
+    <Compile Include="HotwordDataService.cs" />
+    <Compile Include="Impl\Apis\GroupCardService.cs" />
+    <Compile Include="Impl\AuthenticationService.cs" />
+    <Compile Include="Impl\CouponService.cs" />
+    <Compile Include="Impl\FavoriteService.cs" />
+    <Compile Include="Contract\IUserService.cs" />
+    <Compile Include="Impl\LikeService.cs" />
+    <Compile Include="Impl\PointService.cs" />
+    <Compile Include="Impl\PromotionService.cs" />
+    <Compile Include="Impl\RemindService.cs" />
+    <Compile Include="Impl\ResourceService.cs" />
+    <Compile Include="Contract\IResourceService.cs" />
+    <Compile Include="CouponDataService.cs" />
+    <Compile Include="CustomerDataService.cs" />
+    <Compile Include="FavoriteDataService.cs" />
+    <Compile Include="GroupDataService.cs" />
+    <Compile Include="Impl\ShareService.cs" />
+    <Compile Include="Impl\UserRightService.cs" />
+    <Compile Include="Impl\UserService.cs" />
+    <Compile Include="Manager\CacheKeyManager.cs" />
+    <Compile Include="Manager\FileUploadServiceManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Manager\UploadFileConfigManager.cs" />
+    <Compile Include="MessageCenterService.cs" />
+    <Compile Include="PointDataService.cs" />
+    <Compile Include="ItemsDataService.cs" />
+    <Compile Include="ShareDataService.cs" />
+    <Compile Include="SpecialTopicDataService.cs" />
+    <Compile Include="StoreDataService.cs" />
+    <Compile Include="LikeDataService.cs" />
+    <Compile Include="Manager\MappingManager.cs" />
+    <Compile Include="ProductDataService.cs" />
+    <Compile Include="PromotionDataService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionService.cs" />
+    <Compile Include="TagDataService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.intime.fashion.common.config\com.intime.fashion.common.config.csproj">
+      <Project>{5d633b61-5763-459b-a72e-ae66f5bc0793}</Project>
+      <Name>com.intime.fashion.common.config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.common.message\com.intime.fashion.common.message.csproj">
+      <Project>{a7154a06-be04-400f-8652-5b52e673b7db}</Project>
+      <Name>com.intime.fashion.common.message</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.common\com.intime.fashion.common.csproj">
+      <Project>{6992ffb6-c70d-4f8a-a03a-4f663fa370f4}</Project>
+      <Name>com.intime.fashion.common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Contract\Yintai.Hangzhou.Contract.csproj">
+      <Project>{11F8922E-2EEB-4229-BA7C-1D44843C4EDA}</Project>
+      <Name>Yintai.Hangzhou.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Data\Yintai.Hangzhou.Data.csproj">
+      <Project>{B07CEC69-B35A-4435-9E83-D7AD4E1F236E}</Project>
+      <Name>Yintai.Hangzhou.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Model\Yintai.Hangzhou.Model.csproj">
+      <Project>{173FF5C0-5631-47AD-AF9E-16442858C080}</Project>
+      <Name>Yintai.Hangzhou.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Repository\Yintai.Hangzhou.Repository.csproj">
+      <Project>{82BE109A-483E-40BF-98B8-A555BCA86111}</Project>
+      <Name>Yintai.Hangzhou.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

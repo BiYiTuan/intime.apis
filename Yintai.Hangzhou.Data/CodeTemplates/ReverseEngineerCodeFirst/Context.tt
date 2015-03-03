@@ -1,0 +1,162 @@
+<#@ template hostspecific="true" language="C#" #>
+<#@ include file="EF.Utility.CS.ttinclude" #><#@
+ output extension=".cs" #><#
+
+    var efHost = (EfTextTemplateHost)Host;
+    var code = new CodeGenerationTools(this);
+	var className = efHost.EntityContainer.Name;
+	className = "YintaiHangzhouContext";
+#>
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.Objects;
+using EFCachingProvider;
+using EFCachingProvider.Caching;
+using EFTracingProvider;
+using EFProviderWrapperToolkit;
+using <#= code.EscapeNamespace(efHost.MappingNamespace) #>;
+
+namespace <#= code.EscapeNamespace(efHost.Namespace) #>
+{
+    public partial class <#= className #> : DbContext
+    {
+        private static readonly Architecture.Common.Logger.ILog _log;
+
+        static <#= className #>()
+        {
+            Database.SetInitializer<<#= className #>>(null);
+            _log = Architecture.Framework.ServiceLocation.ServiceLocator.Current.Resolve<Architecture.Common.Logger.ILog>();
+        }
+
+		/// <summary>
+        /// 正式环境使用，无跟踪
+        /// </summary>
+        public <#= className #>()
+            : this("Name=<#= className #>", "v1")
+        {
+        }
+
+        /// <summary>
+        /// 正式环境使用，无跟踪
+        /// </summary>
+        /// <param name="nameOrConnectionString"></param>
+        /// <param name="version"></param>
+        public <#= className #>(string nameOrConnectionString, string version)
+            : base(nameOrConnectionString)
+        {
+        }
+
+        #region ef tracing
+
+		public <#= className #>(string nameOrConnectionString)
+            : this(nameOrConnectionString, new InMemoryCache(512), CachingPolicy.CacheAll)
+        {
+        }
+
+        public <#= className #>(string nameOrConnectionString, ICache cacheProvider, CachingPolicy cachingPolicy)
+            : base(Architecture.Common.Data.EF.EFTracingUtil.GetConnection(nameOrConnectionString), true)
+        {
+			var ctx = ((IObjectContextAdapter)this).ObjectContext;
+
+            this.ObjectContext = ctx;
+
+            EFTracingConnection tracingConnection;
+            if (ObjectContext.TryUnwrapConnection(out tracingConnection))
+            {
+                ctx.GetTracingConnection().CommandExecuting += (s, e) => _log.Debug(e.ToTraceString());
+            }
+
+            EFCachingConnection cachingConnection;
+            if (ObjectContext.TryUnwrapConnection(out cachingConnection))
+            {
+                Cache = cacheProvider;
+                CachingPolicy = cachingPolicy;
+            }
+        }
+
+        #endregion
+
+		#region Tracing Extensions
+
+        private ObjectContext ObjectContext { get; set; }
+
+        private EFTracingConnection TracingConnection
+        {
+            get { return ObjectContext.UnwrapConnection<EFTracingConnection>(); }
+        }
+
+        public event EventHandler<CommandExecutionEventArgs> CommandExecuting
+        {
+            add { this.TracingConnection.CommandExecuting += value; }
+            remove { this.TracingConnection.CommandExecuting -= value; }
+        }
+
+        public event EventHandler<CommandExecutionEventArgs> CommandFinished
+        {
+            add { this.TracingConnection.CommandFinished += value; }
+            remove { this.TracingConnection.CommandFinished -= value; }
+        }
+
+        public event EventHandler<CommandExecutionEventArgs> CommandFailed
+        {
+            add { this.TracingConnection.CommandFailed += value; }
+            remove { this.TracingConnection.CommandFailed -= value; }
+        }
+
+        #endregion
+
+        #region Caching Extensions
+
+        private EFCachingConnection CachingConnection
+        {
+            get { return ObjectContext.UnwrapConnection<EFCachingConnection>(); }
+        }
+
+        public ICache Cache
+        {
+            get { return CachingConnection.Cache; }
+            set { CachingConnection.Cache = value; }
+        }
+
+        public CachingPolicy CachingPolicy
+        {
+            get { return CachingConnection.CachingPolicy; }
+            set { CachingConnection.CachingPolicy = value; }
+        }
+
+        #endregion
+
+		#region code reverse
+<#
+    foreach (var set in efHost.EntityContainer.BaseEntitySets.OfType<EntitySet>())
+    {
+#>
+        public DbSet<<#= set.ElementType.Name #>Entity> <#= set.Name #> { get; set; }
+<#
+    }
+#>
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+			Configuration.AutoDetectChangesEnabled = false;
+            // 移除复数表名的契约
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            // 防止黑幕交易 要不然每次都要访问 EdmMetadata这个表 EF4.1后可注释
+            modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
+
+<#
+    foreach (var set in efHost.EntityContainer.BaseEntitySets.OfType<EntitySet>())
+    {
+#>
+            modelBuilder.Configurations.Add(new <#= set.ElementType.Name #>EntityMap());
+<#
+    }
+#>
+        }
+
+		#endregion
+    }
+}

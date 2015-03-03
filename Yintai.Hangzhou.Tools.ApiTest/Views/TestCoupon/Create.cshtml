@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<form action="http://localhost:38190/api/product/coupon" method="POST">
+
+    <h1>V1.0.0
+        uid : 31fbfd2079e8cb7bdd9191082fd5f7a2
+        sign : C054B809BBD24599145BA40F73F657BA
+        client_version : 1.0.0
+    </h1>
+
+    <h1>V1.0
+        uid : 1d28c9ef01a5ec985741a4d53ecabfbd
+        sign : 16323A8EB8171CA007EF44A072389DC9
+        client_version : 1.0
+    </h1>
+
+
+    <label for="client_version">client_version</label>
+    <input id="client_version" name="client_version" type="text" value="1.0" />
+    <br />
+    <label for="uid">uid</label>
+    <input id="uid" name="uid" type="text" value="" />
+    <br />
+    <label for="sign">sign</label>
+    <input id="sign" name="sign" type="text" value="" />
+    <br />
+
+
+    <label for="PromotionId">PromotionId</label>
+    <input id="PromotionId" name="PromotionId" type="text" value="" />
+    <br />
+    <label for="ProductId">ProductId</label>
+    <input id="ProductId" name="ProductId" type="text" value="" />
+    <br />
+    <input type="hidden" id="Method" name="Method" value="Create" />
+
+
+    <label for="token">token</label>
+    <input type="text" name="token" value="vJQICst1Gg9E3s9XarQqFz9FLedEgP0iLdaBLNlLakVSCewNmDiFEKDK3nlOoto3" />
+    <br />
+    <label for="ispass">ispass</label>
+    <input type="text" name="ispass" value="1" />
+    <br />
+
+    <input type="submit" value="run" />
+</form>

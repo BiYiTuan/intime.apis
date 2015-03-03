@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>com.intime.fashion.common.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:com.intime.fashion.common.Fakes.ShimSecurityHelper">
+            <summary>Shim type of com.intime.fashion.common.SecurityHelper</summary>
+        </member>
+        <member name="M:com.intime.fashion.common.Fakes.ShimSecurityHelper.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:com.intime.fashion.common.Fakes.ShimSecurityHelper.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:com.intime.fashion.common.Fakes.ShimSecurityHelper.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:com.intime.fashion.common.Fakes.ShimSecurityHelper.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:com.intime.fashion.common.Fakes.ShimSecurityHelper.CheckEqualStringString">
+            <summary>Sets the shim of SecurityHelper.CheckEqual(String pass, String hashedPass)</summary>
+        </member>
+        <member name="P:com.intime.fashion.common.Fakes.ShimSecurityHelper.ComputeHashString">
+            <summary>Sets the shim of SecurityHelper.ComputeHash(String pass)</summary>
+        </member>
+    </members>
+</doc>

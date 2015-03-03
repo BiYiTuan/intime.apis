@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{11F8922E-2EEB-4229-BA7C-1D44843C4EDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yintai.Hangzhou.Contract</RootNamespace>
+    <AssemblyName>Yintai.Hangzhou.Contract</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.20105.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Yintai.Architecture.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Yintai.Architecture.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Yintai.Architecture.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Yintai.Architecture.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Apns\IApnsDataService.cs" />
+    <Compile Include="Brand\IBrandDataService.cs" />
+    <Compile Include="Card\ICardDataService.cs" />
+    <Compile Include="Comment\ICommentDataService.cs" />
+    <Compile Include="Coupon\ICouponDataService.cs" />
+    <Compile Include="Customer\ICustomerDataService.cs" />
+    <Compile Include="DTO\DateTimeExtension.cs" />
+    <Compile Include="DTO\Request\Card\BindingRequest.cs" />
+    <Compile Include="DTO\Request\ComputeAmountRequest.cs" />
+    <Compile Include="DTO\Request\IMSIncomeReqRequest.cs" />
+    <Compile Include="DTO\Request\IMSComboStatusUpdateRequest.cs" />
+    <Compile Include="DTO\Request\IMSComboUpdateRequest.cs" />
+    <Compile Include="DTO\Request\Coupon\CouponRequest.cs" />
+    <Compile Include="DTO\Request\Coupon\CouponRequestType.cs" />
+    <Compile Include="DTO\Request\CreateAddressRequest.cs" />
+    <Compile Include="DTO\Request\DeleteAddressRequest.cs" />
+    <Compile Include="DTO\Request\ExchangeStoreCouponRequest.cs" />
+    <Compile Include="DTO\Request\ExchangeStoreCouponRuleRequest.cs" />
+    <Compile Include="DTO\Request\Feedback\FeedbackCreateRequest.cs" />
+    <Compile Include="DTO\Request\GetAddressDetailRequest.cs" />
+    <Compile Include="DTO\Request\GetConversationRequest.cs" />
+    <Compile Include="DTO\Request\GetFavorListRequest.cs" />
+    <Compile Include="DTO\Request\GetProductInfo4PRequest.cs" />
+    <Compile Include="DTO\Request\IMSComboCreateRequest.cs" />
+    <Compile Include="DTO\Request\IMSGiftcardChangePwdRequest.cs" />
+    <Compile Include="DTO\Request\IMSGiftcardListRequest.cs" />
+    <Compile Include="DTO\Request\IMSGiftcardResetPwdRequest.cs" />
+    <Compile Include="DTO\Request\IMSGiftcardSendRequest.cs" />
+    <Compile Include="DTO\Request\IMSProductBrandsRequest.cs" />
+    <Compile Include="DTO\Request\IMSProductCreateRequest.cs" />
+    <Compile Include="DTO\Request\IMSProductSearchRequest.cs" />
+    <Compile Include="DTO\Request\IMSStoreDetailUpdateRequest.cs" />
+    <Compile Include="DTO\Request\IMSStoreInviteCodeRequest.cs" />
+    <Compile Include="DTO\Request\IMSUserFavorRequest.cs" />
+    <Compile Include="DTO\Request\MyCommentListRequest.cs" />
+    <Compile Include="DTO\Request\MyOrderDetailRequest.cs" />
+    <Compile Include="DTO\Request\MyOrderPayRequest.cs" />
+    <Compile Include="DTO\Request\MyOrderRequest.cs" />
+    <Compile Include="DTO\Request\NewPMessageRequest.cs" />
+    <Compile Include="DTO\Request\OrderPrepareShipRequest.cs" />
+    <Compile Include="DTO\Request\OrderRejectRequest.cs" />
+    <Compile Include="DTO\Request\OrderRequest.cs" />
+    <Compile Include="DTO\Request\OrderShipRequest.cs" />
+    <Compile Include="DTO\Request\OrderVoidRequest.cs" />
+    <Compile Include="DTO\Request\PaymentModel.cs" />
+    <Compile Include="DTO\Request\Point\GetPointInfoRequest.cs" />
+    <Compile Include="DTO\Request\ProductComplex\GetItemsListRequest.cs" />
+    <Compile Include="DTO\Request\RMACheckRequest.cs" />
+    <Compile Include="DTO\Request\RMAConfirmRequest.cs" />
+    <Compile Include="DTO\Request\RMAReceivedRequest.cs" />
+    <Compile Include="DTO\Request\RMARequest.cs" />
+    <Compile Include="DTO\Request\ShippingAddressModel.cs" />
+    <Compile Include="DTO\Request\SpecialTopic\SpecialTopicRequest.cs" />
+    <Compile Include="DTO\Request\StoreCouponDetailRequest.cs" />
+    <Compile Include="DTO\Request\StoreCouponListRequest.cs" />
+    <Compile Include="DTO\Request\TagPropertyModel.cs" />
+    <Compile Include="DTO\Request\Tag\TagRequest.cs" />
+    <Compile Include="DTO\Request\Device\DeviceRegisterRequest.cs" />
+    <Compile Include="DTO\Request\BaseRequest.cs" />
+    <Compile Include="DTO\Request\Brand\BrandRequest.cs" />
+    <Compile Include="DTO\Request\Comment\CommentRequest.cs" />
+    <Compile Include="DTO\Request\Favorite\DestroyRequest.cs" />
+    <Compile Include="DTO\Request\Pass\PassCreateRequest.cs" />
+    <Compile Include="DTO\Request\Share\ShareRequest.cs" />
+    <Compile Include="DTO\Request\Store\StoreRequest.cs" />
+    <Compile Include="DTO\Request\WxGetPay4AppTokenRequest.cs" />
+    <Compile Include="DTO\Request\WxGetPay4HtmlUrlRequest.cs" />
+    <Compile Include="DTO\Request\WxNotifyPostRequest.cs" />
+    <Compile Include="DTO\Request\WxPackageGetRequest.cs" />
+    <Compile Include="DTO\Response\Card\CardInfoResponse.cs" />
+    <Compile Include="DTO\Response\Comment\CommentCollectionResponse.cs" />
+    <Compile Include="DTO\Response\IMSIncomeDetailResponse.cs" />
+    <Compile Include="DTO\Response\IMSIncomeReqDetailResponse.cs" />
+    <Compile Include="DTO\Response\Device\DeviceInfoResponse.cs" />
+    <Compile Include="DTO\Response\BaseResponse.cs" />
+    <Compile Include="DTO\Response\Brand\BrandResponse.cs" />
+    <Compile Include="DTO\Response\Coupon\CouponInfoResponse.cs" />
+    <Compile Include="DTO\Response\Device\DeviceLogInfoResponse.cs" />
+    <Compile Include="DTO\Response\ExchangeStoreCouponResponse.cs" />
+    <Compile Include="DTO\Response\ExchangeStoreCouponRuleResponse.cs" />
+    <Compile Include="DTO\Response\GetAvailOperationsResponse.cs" />
+    <Compile Include="DTO\Response\GetMessageDetailReponse.cs" />
+    <Compile Include="DTO\Response\GetProductInfo4PResponse.cs" />
+    <Compile Include="DTO\Response\GetShipCityDetailResponse.cs" />
+    <Compile Include="DTO\Response\HotKey\HotWordResponse.cs" />
+    <Compile Include="DTO\Response\IMSComboDetailResponse.cs" />
+    <Compile Include="DTO\Response\IMSProductDetailResponse.cs" />
+    <Compile Include="DTO\Response\IMSStoreDetailResponse.cs" />
+    <Compile Include="DTO\Response\ItemsInfoResponse.cs" />
+    <Compile Include="DTO\Response\ItemsCollectionResponse.cs" />
+    <Compile Include="DTO\Response\MyCommentInfoResponse.cs" />
+    <Compile Include="DTO\Response\MyOrderDetailResponse.cs" />
+    <Compile Include="DTO\Response\NewPMessageResponse.cs" />
+    <Compile Include="DTO\Response\OrderResponse.cs" />
+    <Compile Include="DTO\Response\PagerInfoResponse.cs" />
+    <Compile Include="DTO\Response\PaymentResponse.cs" />
+    <Compile Include="DTO\Response\Point\PointInfoResponse.cs" />
+    <Compile Include="DTO\Response\RMAInfoResponse.cs" />
+    <Compile Include="DTO\Response\RMAReasonResponse.cs" />
+    <Compile Include="DTO\Response\SelfAddressResponse.cs" />
+    <Compile Include="DTO\Response\ShipViaResponse.cs" />
+    <Compile Include="DTO\Response\SpecialTopic\SpecialTopic.cs" />
+    <Compile Include="DTO\Response\Promotion\PromotionInfoResponse.cs" />
+    <Compile Include="DTO\Response\Resources\ResourceInfoResponse.cs" />
+    <Compile Include="DTO\Response\StoreCouponDetailResponse.cs" />
+    <Compile Include="DTO\Response\Store\StoreInfoResponse.cs" />
+    <Compile Include="DTO\Response\TagPropertyDetailResponse.cs" />
+    <Compile Include="DTO\Response\Tag\TagInfoResponse.cs" />
+    <Compile Include="DTO\Response\TPagerInfoResponse.cs" />
+    <Compile Include="DTO\Response\WxGetPay4AppTokenResponse.cs" />
+    <Compile Include="DTO\Response\WxGetPay4HtmlUrlResponse.cs" />
+    <Compile Include="DTO\Response\WxPackageGetResponse.cs" />
+    <Compile Include="DTO\ThumnImageType.cs" />
+    <Compile Include="Favorite\IFavoriteDataService.cs" />
+    <Compile Include="Feedback\IFeedbackDataService.cs" />
+    <Compile Include="Group\Group.cs" />
+    <Compile Include="HotWord\HotwordDataService.cs" />
+    <Compile Include="Images\Exif\Exif.cs" />
+    <Compile Include="Images\Exif\ExifFileds.cs" />
+    <Compile Include="Images\Exif\Utilities.cs" />
+    <Compile Include="Images\FileInfor.cs" />
+    <Compile Include="Images\FileMessage.cs" />
+    <Compile Include="Images\FileUploadMessage.cs" />
+    <Compile Include="Images\IImageService.cs" />
+    <Compile Include="Images\ThumbnailInfo.cs" />
+    <Compile Include="Like\ILikeDataService.cs" />
+    <Compile Include="Point\IPointDataService.cs" />
+    <Compile Include="ProductComplex\IProductComplexDataService.cs" />
+    <Compile Include="Product\IProductDataService.cs" />
+    <Compile Include="Promotion\IPromotionDataService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Region\IRegionService.cs" />
+    <Compile Include="DTO\Request\Customer\LoginRequest.cs" />
+    <Compile Include="DTO\Request\Favorite\FavoriteRequest.cs" />
+    <Compile Include="DTO\Request\Like\LikeRequest.cs" />
+    <Compile Include="DTO\Request\Product\GetProductListRequest.cs" />
+    <Compile Include="DTO\Request\Promotion\GetPromotionListRequest.cs" />
+    <Compile Include="DTO\Request\Region\GetRegionListRequest.cs" />
+    <Compile Include="DTO\Response\Customer\LoginResponse.cs" />
+    <Compile Include="DTO\Response\Favorite\FavoriteResponse.cs" />
+    <Compile Include="DTO\Response\Like\LikeResponse.cs" />
+    <Compile Include="DTO\Response\Product\GetProductListResponse.cs" />
+    <Compile Include="DTO\Response\Promotion\GetPromotionListResponse.cs" />
+    <Compile Include="DTO\Response\Region\GetRegionListResponse.cs" />
+    <Compile Include="Share\IShareDataService.cs" />
+    <Compile Include="SpecialTopic\ISpecialTopicDataService.cs" />
+    <Compile Include="Store\IStoreDataService.cs" />
+    <Compile Include="Tag\ITagDataService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Remind\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.intime.fashion.common\com.intime.fashion.common.csproj">
+      <Project>{6992ffb6-c70d-4f8a-a03a-4f663fa370f4}</Project>
+      <Name>com.intime.fashion.common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Data\Yintai.Hangzhou.Data.csproj">
+      <Project>{b07cec69-b35a-4435-9e83-d7ad4e1f236e}</Project>
+      <Name>Yintai.Hangzhou.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Model\Yintai.Hangzhou.Model.csproj">
+      <Project>{173ff5c0-5631-47ad-af9e-16442858c080}</Project>
+      <Name>Yintai.Hangzhou.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+﻿
+模版存放目录：
+Templates/Tmall
+
+taobao相关配置
+
+AppSettings节点
+{consumerKey}.serverUrl
+{consumerKey}.appKey
+{consumerKey}.appSecure
+
+

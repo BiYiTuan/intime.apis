@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{174CFFF7-C2B4-4E57-8503-733EC3062BAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.intime.fashion.data.sync</RootNamespace>
+    <AssemblyName>com.intime.fashion.data.sync</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Elasticsearch.Net">
+      <HintPath>..\packages\Elasticsearch.Net.1.0.0-beta1\lib\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Nest">
+      <HintPath>..\packages\NEST.1.0.0-beta1\lib\Nest.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="TopSdk">
+      <HintPath>..\_dll\TopSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Yintai.Architecture.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dll\Yintai.Architecture.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbContextHelper.cs" />
+    <Compile Include="FileItem.cs" />
+    <Compile Include="ISyncRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tmall\ConstValue.cs" />
+    <Compile Include="Tmall\Executor\ExecutorBase.cs" />
+    <Compile Include="Tmall\Executor\ItemSyncExecutor.cs" />
+    <Compile Include="Tmall\Executor\LogisticsExecutor.cs" />
+    <Compile Include="Tmall\Executor\OrderExecutorBase.cs" />
+    <Compile Include="Tmall\Executor\OrderSyncExecutor.cs" />
+    <Compile Include="Tmall\Executor\OrderType.cs" />
+    <Compile Include="Tmall\Executor\SyncResult.cs" />
+    <Compile Include="WebUtils.cs" />
+    <Compile Include="Wgw\ConstValue.cs" />
+    <Compile Include="Wgw\Executor\BrandSyncExecutor.cs" />
+    <Compile Include="Wgw\Executor\ExecutorBase.cs" />
+    <Compile Include="Wgw\Executor\GetItemMultiStockExecutor.cs" />
+    <Compile Include="Wgw\Executor\InventorySyncExecutor.cs" />
+    <Compile Include="Wgw\Executor\OrderSyncExecutor.cs" />
+    <Compile Include="Wgw\Executor\ProductImageSyncExecutor.cs" />
+    <Compile Include="Wgw\Executor\ProductStatusSyncExecutor.cs" />
+    <Compile Include="Wgw\Executor\ProductSyncExecutor.cs" />
+    <Compile Include="Wgw\Executor\ItemStatusExecutor.cs" />
+    <Compile Include="Wgw\Request\Builder\CloseOrderRequestBuilder.cs" />
+    <Compile Include="Wgw\Request\Builder\Image\ImageBuilder.cs" />
+    <Compile Include="Wgw\Request\Builder\ItemRequestParamsBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Wgw\Request\Builder\MarkShippingRequestBuilder.cs" />
+    <Compile Include="Wgw\Request\Builder\Stock\StockBuilder.cs" />
+    <Compile Include="Wgw\Request\Builder\UpdateProductImageRequestBuilder.cs" />
+    <Compile Include="Wgw\Request\Builder\QueryOrderRequestBuilder.cs" />
+    <Compile Include="Wgw\Request\Builder\UpdateItemMultiStockRequestBuilder.cs" />
+    <Compile Include="Wgw\Request\Builder\UpdateItemRequestParamsBuilder.cs" />
+    <Compile Include="Wgw\Request\Item\GetBrandListRequest.cs" />
+    <Compile Include="Wgw\Request\Item\QueryItemDetailRequest.cs" />
+    <Compile Include="Wgw\Request\Item\UpOrDownItemRequest.cs" />
+    <Compile Include="Wgw\Request\Order\CloseOrderRequest.cs" />
+    <Compile Include="Wgw\Request\Order\MarkShippingRequest.cs" />
+    <Compile Include="Wgw\Response\Processor\Order\CreatedOrderProcessor.cs" />
+    <Compile Include="Wgw\Response\Processor\Order\PaidOrderProcessor.cs" />
+    <Compile Include="Wgw\Response\Processor\QueryItemListResponseProcessor.cs" />
+    <Compile Include="Wgw\WgwConfigHelper.cs" />
+    <Compile Include="Wgw\Request\Order\OrderStatusConst.cs" />
+    <Compile Include="Wgw\Request\Order\QueryOrderDetailRequest.cs" />
+    <Compile Include="Wgw\Response\Processor\ItemResponseProcessor.cs" />
+    <Compile Include="Wgw\Response\Processor\Order\CancelOrderProcessor.cs" />
+    <Compile Include="Wgw\Response\Processor\IProcessor.cs" />
+    <Compile Include="Wgw\Response\Processor\Order\OrderProcessor.cs" />
+    <Compile Include="Wgw\Response\Processor\ProcessorFactory.cs" />
+    <Compile Include="Wgw\Request\Item\AddItemRequest.cs" />
+    <Compile Include="Wgw\Request\Item\DownItemRequest.cs" />
+    <Compile Include="Wgw\Request\EntityRequest.cs" />
+    <Compile Include="Wgw\Request\Item\GetItemMultiStockRequest.cs" />
+    <Compile Include="Wgw\Request\Item\ItemStockStatus.cs" />
+    <Compile Include="Wgw\ParamName.cs" />
+    <Compile Include="Wgw\Request\Item\QueryItemListRequest.cs" />
+    <Compile Include="Wgw\Request\Item\UpdateItemMultiStockRequest.cs" />
+    <Compile Include="Wgw\Request\Item\UpdateItemRequest.cs" />
+    <Compile Include="Wgw\Request\Item\UpdateItemStockRequest.cs" />
+    <Compile Include="Wgw\Request\Order\QueryOrderListRequest.cs" />
+    <Compile Include="Wgw\Request\RequestBase.cs" />
+    <Compile Include="Wgw\Request\Item\UpItemRequest.cs" />
+    <Compile Include="Wgw\Request\Builder\RequestParamsBuilder.cs" />
+    <Compile Include="Wgw\Request\Builder\RequestParamsBuilderFactory.cs" />
+    <Compile Include="Wgw\Request\WgwSyncException.cs" />
+    <Compile Include="Wgw\SyncClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Wgw\Request\WeCard\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.intime.fashion.common\com.intime.fashion.common.csproj">
+      <Project>{6992ffb6-c70d-4f8a-a03a-4f663fa370f4}</Project>
+      <Name>com.intime.fashion.common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.data.tmall\com.intime.fashion.data.tmall.csproj">
+      <Project>{0dc9c1ac-d758-40d5-a5d2-73bc0ecc9185}</Project>
+      <Name>com.intime.fashion.data.tmall</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.service.search\com.intime.fashion.service.search.csproj">
+      <Project>{BE512BBF-4F5A-4909-B9C0-CF3419E0F945}</Project>
+      <Name>com.intime.fashion.service.search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.fashion.service\com.intime.fashion.service.csproj">
+      <Project>{be4f98bc-b4a2-4fc0-ae7a-96938218f098}</Project>
+      <Name>com.intime.fashion.service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.intime.o2o.data.exchange\com.intime.o2o.data.exchange.csproj">
+      <Project>{6dfef1cf-0b94-420e-82a7-c6cabba3624a}</Project>
+      <Name>com.intime.o2o.data.exchange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Data\Yintai.Hangzhou.Data.csproj">
+      <Project>{b07cec69-b35a-4435-9e83-d7ad4e1f236e}</Project>
+      <Name>Yintai.Hangzhou.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Model\Yintai.Hangzhou.Model.csproj">
+      <Project>{173FF5C0-5631-47AD-AF9E-16442858C080}</Project>
+      <Name>Yintai.Hangzhou.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yintai.Hangzhou.Service\Yintai.Hangzhou.Service.csproj">
+      <Project>{193902DC-242C-4DBA-B173-EE154E813C4B}</Project>
+      <Name>Yintai.Hangzhou.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,307 @@
+﻿@{ ViewBag.Title = "API TEST"; }
+
+<script language="javascript" type="text/javascript">
+
+    // 通过Method获取参数列表
+    function callgetParamListByMethod(el) {
+
+        // 判断参数是否为空
+        var el = $(el);
+        if (el.val() == '') {
+            return;
+        }
+
+        //设置method的值
+        var method = el.val().split('_')[0];
+        $('#method').val(method);
+
+        var ver = el.val().split('_')[1];
+        $('#ver').val(ver);
+
+        //获取参数提示
+        $('#ParamDiv').html('正在获取参数....');
+
+        // 请求参数
+        $.ajax({
+            url: "<%=System.Web.HttpContext.Current.Request.ApplicationPath %>GetParamsByName?r=" + Math.random(),
+            type: 'GET',
+            dataType: 'json',
+            data: { "methodName": $(el).val() },
+            success: function (data) {
+                var params = data.Params;
+
+                // 动态生成form
+                var table = $('<table cellspacing="0" cellpadding="4" border="0" width="500"></table>');
+
+                for (var i = 0; i < params.length; i++) {
+                    var param = params[i];
+
+                    var defaultValude = data.DefaultValue;
+
+                    if (defaultValude == undefined) {
+                        defaultValude = '';
+                    }
+
+                    if (param.Name == 'data') {
+                        table.append(' <tr><td align="right" width="160">' + param.Name + '：</td><td width="340"><span class="l"><textarea type="text" style="border:1px solid #000" rows="10" cols="35"  value="" name="' + param.Name + '">' + defaultValude + '</textarea></span></td></tr>');
+                    }
+                    else {
+                        table.append(' <tr><td align="right" width="160">' + param.Name + '：</td><td width="340"><span class="l"><input type="text" style="border:1px solid #000;height:25px;" value="" name="' + param.Name + '"/></span></td></tr>');
+                    }
+                }
+
+                $('#ParamDiv').html('');
+                $('#ParamDiv').append(table);
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(xhr.responseText);
+                $('#frmApitest').attr("disabled", false);
+                $('#ParamDiv').html('');
+            }
+        });
+    }
+
+    function setUserId(data) {
+        if (data.IsSucessful) {
+
+            // 解析返回结果
+            var d = $.parseJSON(data.Data);
+            if (d.isSuccessful) {
+                var userId = d.userId;
+                $('#userId').val(userId);
+            }
+
+            $('#resultShow').val(data.Data);
+        } else {
+            alert(data.Message);
+        }
+    }
+
+    // 请求接口
+    function request() {
+
+        var el = $('#methodName');
+        if (el.val() == '') {
+            return;
+        }
+
+        //设置method的值
+        var method = el.val().split('_')[0];
+        $('#method').val(method);
+
+        //获取当前form的数据
+        var data = $('#frmApitest').serialize(true);
+
+        //设置param
+        $('#param').val(data);
+
+        //显示提示信息
+        $('#resultShow').val('正在加载请稍后...');
+
+        $('#frmApitest').attr("disabled", true);
+
+        $.ajax({
+            url: "<%=System.Web.HttpContext.Current.Request.ApplicationPath %>proxy?r=" + Math.random(),
+            type: 'POST',
+            dataType: 'json',
+            data: data,
+            success: function (data) {
+
+                if (data.IsSucessful) {
+                    var d = $.parseJSON(data.Data);
+
+                    $('#resultShow').val(data.Data);
+                } else {
+                    alert(data.Message);
+                    $('#resultShow').val('');
+                }
+
+                //如果为customer.login设置userId
+                if (method == 'customer.login') {
+                    setUserId(data);
+                }
+
+                $('#frmApitest').attr("disabled", false);
+            },
+            error: function (xhr, status, errMsg) {
+                alert(errMsg.code + "<br/>" + errMsg.msg);
+
+                $('#frmApitest').attr("disabled", false);
+                $('#resultShow').val('');
+            }
+        });
+    }
+
+    function setTimeReq() {
+        $('#timeReq').val(new Date().format("yyyyMMddhhmmss"));
+    }
+
+    function toggle() {
+
+        var btn = $('#toggleButton');
+
+        if (btn.val() == '收起公共参数') {
+            btn.val('展开公共参数');
+        } else {
+            btn.val('收起公共参数');
+        }
+        $('#commonSpan').toggle();
+    }
+
+    $(document).ready(function () {
+        setTimeReq();
+    });
+
+    //扩展Date方法
+    Date.prototype.format = function(format) {
+        /*
+        * eg:format="YYYY-MM-dd hh:mm:ss";
+        */
+        var o = {
+            "M+": this.getMonth() + 1,  //month
+            "d+": this.getDate(),     //day
+            "h+": this.getHours(),    //hour
+            "m+": this.getMinutes(),  //minute
+            "s+": this.getSeconds(), //second
+            "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+            "S": this.getMilliseconds() //millisecond
+        };
+
+        if ( /(y+)/ .test(format)) {
+            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(format)) {
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+            }
+        }
+        return format;
+    };
+</script>
+<table cellspacing="0" cellpadding="0" border="1" width="100%" style="margin: 0 auto;
+    line-height: 30px;">
+    <tbody>
+        <tr>
+            <td valign="top">
+                <form action="" method="post" name="frmApitest" id="frmApitest">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table cellspacing="0" cellpadding="4" border="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <td align="right" style="height: 38px">
+                                                API：
+                                            </td>
+                                            <td style="height: 38px">
+                                                <span id="Span1">
+                                                    <select onchange="callgetParamListByMethod(this);" name="methodName" id="methodName">
+                                                        <option value="">--请选择API--</option>
+                                                        <%foreach (var method in Model.Methods.Methods) { %>
+                                                        <option value="<%=method.Name %>_<%=method.Version %>"><%=method.Name %>_<%=method.Version
+                                                            %></option>
+                                                        <%} %>
+                                                    </select>
+                                                    <input type="hidden" id="method" name="method" />
+                                                    <input type="hidden" id="ver" name="ver" />
+                                                </span>&nbsp;
+                                                <input type="button" style="width: 100px; font-size: 12px; height: 30px; padding-top: 3px;
+                                                    border: #666666 1px solid; cursor: pointer" onclick="toggle();" value="收起公共参数"
+                                                    id="toggleButton">
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="commonSpan">
+                                        <tr>
+                                            <td align="right">
+                                                数据环境：
+                                            </td>
+                                            <td>
+                                                <input type="radio" checked="true" value="test" name="env" id="envSendbox">
+                                                测试
+                                                <input type="radio" value="pre" name="env" id="preSendbox">
+                                                正式
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                平台系统：
+                                            </td>
+                                            <td>
+                                                <input type="radio" checked="" value="iphone" name="os">
+                                                IPhone
+                                                <input type="radio" value="android" name="os">
+                                                Android
+                                            </td>
+                                        </tr>
+                                        <tr id="sessionSapn">
+                                            <td align="right">
+                                                userId：
+                                            </td>
+                                            <td>
+                                                <textarea name="userId" id="userId" style="width: 200px;"></textarea><a onclick="alert('请调用customer.login获取userId\r\n当API的访问级别为‘公开’时，userId不需要填写；\r\n当API的访问级别为‘须用户登录’时，userId必须填写')"
+                                                    href="javascript:void(0)">说明</a>
+                                            </td>
+                                        </tr>
+                                        <tr id="sourceIdSpan">
+                                            <td align="right">
+                                                sourceId：
+                                            </td>
+                                            <td>
+                                                <input type="text" style="width: 190px;" value="yek_yek_001" name="sourceId" id="sourceId">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                timeReq：
+                                            </td>
+                                            <td>
+                                                <input type="text" style="width: 190px;" value="yek_yek_001" name="timeReq" id="timeReq"><a
+                                                    onclick="setTimeReq()" href="javascript:void(0)">更新</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span id="ParamDiv"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellspacing="0" cellpadding="4" border="0" width="500">
+                                    <tbody>
+                                        <tr>
+                                            <td width="160">
+                                                &nbsp;
+                                            </td>
+                                            <td align="left" width="340">
+                                                <input type="button" style="width: 150px; font-size: 14px; height: 40px; padding-top: 3px;
+                                                    border: #666666 1px solid; cursor: pointer" onclick="request();" value="提交测试" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </form>
+            </td>
+            <td valign="middle" style="font-size: 14px; padding-left: 20px; font-weight: bold">
+                提交参数：<br>
+                <textarea readonly="" rows="6" cols="50" id="param" name="param"></textarea><br>
+                <br>
+                返回结果：<br>
+                <textarea readonly="" rows="18" cols="50" id="resultShow" name="resultShow"></textarea>
+                <br />
+                <br />
+            </td>
+        </tr>
+    </tbody>
+</table>
